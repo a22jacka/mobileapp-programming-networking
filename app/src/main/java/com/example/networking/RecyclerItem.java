@@ -1,7 +1,5 @@
 package com.example.networking;
-
-
-//package com.danieloskarsson.recyclerviewapp;//why?
+//package com.danieloskarsson.recyclerviewapp;//why?what?
 
 @SuppressWarnings("WeakerAccess")
 public class RecyclerItem {
