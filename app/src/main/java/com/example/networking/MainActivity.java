@@ -9,6 +9,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @SuppressWarnings("FieldCanBeLocal")
@@ -37,6 +39,14 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         for (Mountains m : listOfMountains) {
             Log.d("Mountain", m.toString());
         }
+
+        ArrayList<RecyclerItem> items = new ArrayList<>(Arrays.asList(
+           new RecyclerItem("Matterhorn"),
+            new RecyclerItem("Mont Blanc"),
+            new RecyclerItem("Denali")
+        ));
+
+
     }
 
 }
