@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new JsonFile(this, this).execute(JSON_FILE);
+        //new JsonFile(this, this).execute(JSON_FILE);
         new JsonTask(this).execute(JSON_URL);
     }
 
@@ -38,16 +38,12 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Gson gson = new Gson();
         Type type = new TypeToken<List<Mountains>>() {}.getType();
         List<Mountains> listOfMountains = gson.fromJson(json, type);
+        ArrayList<RecyclerItem> items = new ArrayList<>();
 
         for (Mountains m : listOfMountains) {
             Log.d("Mountain", m.toString());
+            items.add(new RecyclerItem(m.getName()));
         }
-
-        ArrayList<RecyclerItem> items = new ArrayList<>(Arrays.asList(
-           new RecyclerItem("Matterhorn"),
-            new RecyclerItem("Mont Blanc"),
-            new RecyclerItem("Denali")
-        ));
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, items, new RecyclerViewAdapter.OnClickListener() {
             @Override
