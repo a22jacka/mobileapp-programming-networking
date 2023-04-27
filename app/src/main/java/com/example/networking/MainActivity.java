@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Type type = new TypeToken<List<Mountains>>() {}.getType();
         List<Mountains> listOfMountains = gson.fromJson(json, type);
         ArrayList<RecyclerItem> items = new ArrayList<>();
-
+        
         for (Mountains m : listOfMountains) {
             Log.d("Mountain", m.toString());
             items.add(new RecyclerItem(m.getName()));
